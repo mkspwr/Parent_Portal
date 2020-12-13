@@ -1,25 +1,20 @@
 {
-  "name": "finstagramapp",
+  "name": "parentportal",
   "version": "1.0.0",
-  "description": "A photo sharing social network app.",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-
     "dev": "concurrently \"npm run server\" \"npm run client\""
-
   },
-  "author": "Teal Larson, Kanchan Sharma, Juyean Lee, Lishitha Kanati",
+  "author": "Kanchan Sharma",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
-
-    "cloudinary": "^1.23.0",
-
     "concurrently": "^5.3.0",
     "express": "^4.17.1",
     "gravatar": "^1.8.1",

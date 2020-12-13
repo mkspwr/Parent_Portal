@@ -9,7 +9,6 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
-import Facebook from "./components/Facebook";
 import store from "./store";
 class App extends Component {
   render() {
@@ -21,10 +20,7 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/forgotPassword" component={ForgotPassword} />
-            <Route exact path="/LoginUsingFacebook" component={Facebook} />
-            {/* <p>Facebook Authentication</p>
-        <Facebook /> */}
+            <Route exact path="/forgotpassword" component={ForgotPassword} />
             <Footer />
           </div>
         </Router>
