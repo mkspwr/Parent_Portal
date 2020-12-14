@@ -28,13 +28,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Kakkoo/FinstagramApp.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Kakkoo/FinstagramApp/issues"
-  },
-  "homepage": "https://github.com/Kakkoo/FinstagramApp#readme"
+  }
+ 
 }
