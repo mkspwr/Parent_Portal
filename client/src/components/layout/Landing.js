@@ -8,25 +8,24 @@ class landing extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className="display-3 mb-4">Developer Connector</h1>
+                <h1 className="display-3 mb-4">Parent-Portal</h1>
                 <p className="lead">
-                  Create a developer profile/portfolio, share posts and get help
-                  from other developers
+                  To make your kids helpful, responsible by giving rewards - Use Parent-Portal
                 </p>
                 <hr />
 
-                <Link to='/register' className='btn btn-lg btn-info mr-2' id="signup-link">
-
-                  Sign Up
+                <Link
+                  to="/register"
+                  className="btn btn-lg btn-info mr-2"
+                  id="signup-link"
+                >
+                  Sign Up&nbsp;&nbsp;&nbsp;
                 </Link>
                 <Link to="/login" className="btn btn-lg btn-light">
-                  Login
+                  Login&nbsp;&nbsp;&nbsp;
                 </Link>
                 <Link to="/forgotPassword" className="btn btn-lg btn-light">
                   ForgotPassword
-                </Link>
-                <Link to="/loginUsingFacebook" className="btn btn-lg btn-light">
-                Login using facebook
                 </Link>
               </div>
             </div>
