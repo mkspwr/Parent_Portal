@@ -21,11 +21,15 @@ export const loginUser = (userData) => (dispatch) => {
     .then((res) => {
       //save the token to localstorage
       const { token } = res.data;
+      console.log("1");
       localStorage.setItem("jwtToken", token);
+      console.log("2");
       //set token to auth header
       setAuthToken(token);
+      console.log("3");
       //decode token
       const decoded = jwt_decode(token);
+      console.log("4");
       //Write user info to redux
       dispatch({
         type: SET_USER,

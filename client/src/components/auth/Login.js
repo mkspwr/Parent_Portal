@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -56,7 +55,7 @@ class Login extends Component {
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Log In</h1>
               <p className="lead text-center">
-                Sign in to your DevConnector account
+                Sign in to your Parent Portal account
               </p>
               <form noValidate onSubmit={this.onSubmit}>
                 <div className="form-group">

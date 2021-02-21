@@ -91,7 +91,7 @@ router.post('/login', (req, res) => {
               keys.secretOrKey,
               { expiresIn: 3600 },
               (err, token) => {
-                console.log(token);
+                //console.log(token);
                 return res.json({ token: `Bearer ` + token });
               }
             );
