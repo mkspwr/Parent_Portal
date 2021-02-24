@@ -15,34 +15,31 @@ const router = express.Router();
 // @desc Register user
 // @access Private
 
-router.post("/registerkid", (req, res) => {
-  // console.log('req: ', req.body);
-  // console.log('res: ', res);
-  const { errors, isValid } = validateRegisterkidInput(req.body);
-  console.log("errors: ", errors);
-  console.log("isValid: ", isValid);
+router.post(
+  "/registerkid",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    // console.log('req: ', req.body);
+    // console.log('res: ', res);
+    const { errors, isValid } = validateRegisterkidInput(req.body);
 
-  if (!isValid) {
-    return res.status(400).json(errors);
-  }
-
-  Kid.findOne({ name: req.body.name }).then((kid) => {
-    console.log("user: ", kid);
-    if (kid) {
-      return res.status(400).json({ name: "name already exist" });
-    } else {
-      const newKid = new Kid({
-        name: req.body.name,
-      });
-
-     
-      newKid
-        .save()
-        .then((kid) => res.json(kid))
-        .catch((err) => console.log(err));
+    if (!isValid) {
+      return res.status(400).json(errors);
     }
-  });
-});
+    const kid = {};
+    kid.user = req.user.id;
+    kid.name = req.body.name;
+    Kid.findOne({ name: req.body.name }).then((kid) => {
+      console.log("user: ", kid);
+      if (kid) {
+        return res.status(400).json({ name: "name already exist" });
+      } else {
+        new Kid(kid).save().then((kid) => res.json(kid));
+       
+      }
+    });
+  }
+);
 // @route POST /api/kids
 // @desc assign work to kid
 // @access Private

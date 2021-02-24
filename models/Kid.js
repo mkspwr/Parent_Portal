@@ -22,4 +22,4 @@ const KidSchema = new Schema({
   },
 });
 
-module.exports = Kid = mongoose.model("kids", KidSchema);
+module.exports = Kid = mongoose.model('kids', KidSchema);
