@@ -18,7 +18,7 @@ app.use(bodyparser.json());
 //Use routes
 app.use('/api/users', users);
 app.use('/api/kids', kids);
-const port = 7200;
+const port = 8000;
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
 //Db config

@@ -1,10 +1,12 @@
 const express = require("express");
 const Kids = require("../../models/Kid");
-
+const User = require("../../User");
 const Works = require("../../models/Work");
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
 const router = express.Router();
+const mongoose = require("mongoose");
+
 // @route POST /api/kids
 // @desc Register user
 // @access Private
