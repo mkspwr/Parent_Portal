@@ -26,18 +26,26 @@ router.post(
     if (!isValid) {
       return res.status(400).json(errors);
     }
-    const kid = {};
-    kid.user = req.user.id;
-    kid.name = req.body.name;
-    Kid.findOne({ name: req.body.name }).then((kid) => {
-      console.log("user: ", kid);
-      if (kid) {
-        return res.status(400).json({ name: "name already exist" });
-      } else {
-        new Kid(kid).save().then((kid) => res.json(kid));
-       
-      }
+    const kid = new Kid({
+      user: req.user.id,
+      name: req.body.name,
+      age: req.body.age,
     });
+   
+   
+    Kid.findOne({ name: req.body.name })
+      .then((kid) => {
+        console.log("user: ", kid);
+        if (kid) {
+          return res.status(400).json({ name: "name already exist" });
+        } else {
+          kid
+            .save()
+            .then((kid) => res.json(kid))
+            .catch((err) => console.log(err));
+        }
+      })
+      .catch((err) => console.log(err));
   }
 );
 // @route POST /api/kids
@@ -85,3 +93,4 @@ router.post(
 //     );
 //   });
 // });
+module.exports = router;
