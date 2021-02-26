@@ -26,20 +26,19 @@ router.post(
     if (!isValid) {
       return res.status(400).json(errors);
     }
-    const kid = new Kid({
+    const kiddata = new Kid({
       user: req.user.id,
       name: req.body.name,
       age: req.body.age,
     });
-   
-   
+  
     Kid.findOne({ name: req.body.name })
       .then((kid) => {
         console.log("user: ", kid);
         if (kid) {
           return res.status(400).json({ name: "name already exist" });
         } else {
-          kid
+          kiddata
             .save()
             .then((kid) => res.json(kid))
             .catch((err) => console.log(err));
@@ -52,30 +51,30 @@ router.post(
 // @desc assign work to kid
 // @access Private
 
-// router.post("/assignwork", (req, res) => {
-//   // console.log('req: ', req.body);
-//   // console.log('res: ', res);
-//   const { errors, isValid } = validateAssignWorkInput(req.body);
-//   console.log("errors: ", errors);
-//   console.log("isValid: ", isValid);
+router.post("/assignwork", (req, res) => {
+  // console.log('req: ', req.body);
+  // console.log('res: ', res);
+  const { errors, isValid } = validateAssignWorkInput(req.body);
+  console.log("errors: ", errors);
+  console.log("isValid: ", isValid);
 
-//   if (!isValid) {
-//     return res.status(400).json(errors);
-//   }
-//   const newWork = new Work({
-//     name: req.body.name,
-//     work: req.body.work,
-//     money: req.body.money,
-//   });
-//   newWork
-//     .save()
-//     .then((work) => res.json(work))
-//     .catch((err) => console.log(err));
-//   console.log("work added");
-// });
-// // @route POST /api/kids
-// // @desc assigned to done
-// // @access Private
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+  const newWork = new Work({
+    name: req.body.name,
+    work: req.body.work,
+    money: req.body.money,
+  });
+  newWork
+    .save()
+    .then((work) => res.json(work))
+    .catch((err) => console.log(err));
+  console.log("work added");
+});
+// @route POST /api/kids
+// @desc assigned to done
+// @access Private
 
 // router.post("/assignedtodone", (req, res) => {
 //   const name = req.body.name;
