@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const users = require('./routes/api/users');
 const kids = require('./routes/api/kids');
@@ -22,7 +23,8 @@ const port = 7200;
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
 //Db config
-const db = require('./config/keys').mongoURI;
+//const db = require('./config/keys').mongoURI;
+const db = process.env.DATABASE_URL;
 
 //Connect to MongoDB
 mongoose

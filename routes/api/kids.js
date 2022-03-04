@@ -4,7 +4,6 @@ const User = require("../../models/User");
 const Works = require("../../models/Work");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const keys = require("../../config/keys");
 const passport = require("passport");
 
 const mongoose = require("mongoose");

@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
 const gravatar = require("gravatar");
-const keys = require("../../config/keys");
+
 const nodemailer = require("nodemailer");
 const lodash = require("lodash");
 const validateRegisterInput = require("../../validation/register");
@@ -88,7 +88,7 @@ router.post("/login", (req, res) => {
 
             jwt.sign(
               payload,
-              keys.secretOrKey,
+              process.env.secretOrKey,
               { expiresIn: 3600 },
               (err, token) => {
                 //console.log(token);
@@ -144,7 +144,7 @@ router.post("/forgotPassword", (req, res) => {
             });
           });
         });
-        var transporter = nodemailer.createTransport(keys.smtp);
+        var transporter = nodemailer.createTransport(process.env.smtp);
 
         // setup e-mail data with unicode symbols
         var mailOptions = {
