@@ -15,6 +15,12 @@ const router = express.Router();
 // @route POST /api/users
 // @desc Register user
 // @access Public
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+  res.send('respond with a resource');
+  console.log("second level users");
+});
+
 
 router.get("/getuser", (req, res) => {
   console.log(req.body);
