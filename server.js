@@ -19,7 +19,7 @@ app.get('/', (req, res) => res.send('Hello'));
 //Use routes
 app.use('/api/users', users);
 app.use('/api/kids', kids);
-const port = 7200;
+const port = process.env.port || 7200;
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
 //Db config
