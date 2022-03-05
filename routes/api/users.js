@@ -32,8 +32,8 @@ router.get("/getuser", (req, res) => {
 })
 
 router.post("/register", (req, res) => {
-  // console.log('req: ', req.body);
-  // console.log('res: ', res);
+  console.log('req: ', req.body);
+  console.log('res: ', res);
   const { errors, isValid } = validateRegisterInput(req.body);
   console.log("errors: ", errors);
   console.log("isValid: ", isValid);
