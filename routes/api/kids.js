@@ -36,7 +36,7 @@ router.post(
       .then((kid) => {
         console.log("user: ", kid);
         if (kid) {
-          return res.status(400).json({ name: "name already exist" });
+          return res.status(400).json({ name: "name already exists" });
         } else {
           kiddata
             .save()
