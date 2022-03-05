@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'ppbackend'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AFFF197C24224F38B6539B470A37A0F4 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_734F21B1A7E14AC899F7AA40F9EB71D8 }}
           package: .
