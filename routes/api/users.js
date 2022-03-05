@@ -18,7 +18,7 @@ const router = express.Router();
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
-  console.log("second level users");
+  console.log("second level sdfasf users");
 });
 
 
